@@ -1,0 +1,554 @@
+:root {
+    --green: #99C255;
+    --light-green: #e6f9c6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    font-family: 'Rubik', sans-serif;
+  }
+
+
+  h1, h2, p {
+    font-family: 'Rubik', sans-serif;
+
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+
+  
+  .illustration-title {
+    position: absolute;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 300px;
+    transform: scale(130%);
+    z-index: 10;
+  }
+  .versus {
+    height: 70px;
+    width: 70px;   
+    background: var(--green);
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    place-items: center;
+  }
+
+  .versus h2 {
+      margin: 0 auto;
+  }
+
+
+  .frame {
+    position: relative;
+    width: 1280px;
+    height: fit-content;
+    /* border:2px solid red; */
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+
+
+  .animation-container {
+    left: -320px;
+    position: relative;
+    width: 1800px;
+    min-height: 700px;
+    transform: scale(75%);
+    /* background: #f5f8ff; */
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1280px) {
+    .frame {
+      transform-origin: left;
+      margin: 0 auto;
+      width: 100vw;
+    }
+
+    .animation-container {
+      transform: scale(60%);
+      left: -450px;
+    }
+  }
+
+  @media screen and (max-width: 574px) {
+    .frame {
+      transform-origin: left;
+      margin: 0 auto;
+      width: 100vw;
+    }
+
+    .animation-container {
+      transform: scale(40%);
+      left: -650px;
+    }
+  }
+
+.person-left-standing {
+    position: absolute;
+    left: 320px;
+    top: 0;
+    height: 100%;
+    width: 200px;
+
+    animation: fade 10s infinite ;
+}
+.figure {
+    bottom: 0;
+}
+.mad-1 {
+    top: 160px;
+    left: 70px;
+    animation: vibrate 0.5s linear infinite both;
+  }
+  .mad-2 {
+    top:155px;
+    left:30px;
+    transform: scale(110%);
+    animation: pulsate-bck 0.5s ease-out infinite both;
+  }
+
+  @keyframes fade {
+    0% { opacity: 1;}
+    30% { opacity: 1}
+    40% { opacity: 0;}
+    80% {opacity: 0;}
+    90% {opacity: 1}
+    100% {opacity: 1;}
+  }
+
+  .person-left-hunched {
+    position: absolute;
+    left: 450px;
+    top: 340px;
+    height: 100%;
+    width: 200px;
+
+    animation: fade-2 10s  infinite ;
+
+}
+
+@keyframes fade-2 {
+  0% { opacity: 0;}
+  30% { opacity: 0;}
+  40% {opacity: 1}
+  80% {opacity: 1;}
+  90% {opacity: 0}
+  100% {opacity: 0;}
+}
+
+.mad-hunched-1 {
+  top: -40px;
+  left: 110px;
+  animation: vibrate 0.5s linear infinite both;
+}
+.mad-hunched-2 {
+  top:-50px;
+  left: 70px;
+  transform: scale(110%);
+  animation: pulsate-bck 0.5s ease-out infinite both;
+}
+
+.cards-deck-left{
+  position:absolute;
+  border: 1px solid #D0D9F4;
+  border-radius: 30px;
+  top: -50px;
+  left: 420px;
+  width:315px;
+  height:400px;
+  overflow:hidden;
+  overflow-y:hidden;
+  }
+  .scrolling-card-left {
+    position:absolute;
+    top:-550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: -10;
+    
+    animation: scroll-left 15s linear infinite;
+    }
+  @keyframes scroll-left {
+    100% { top: -10px }
+    }
+
+
+  .blur-bottom {
+      position: absolute;
+      bottom: 0;
+      transform: scaleY(-1);
+  }
+
+/* PERSON RIGHT */
+
+  .person-right {
+      bottom: 0;
+      right: 120px;
+  }
+  .head-1 {
+    bottom: 323px;
+    right: 310px;
+    z-index: 20;
+    animation: head-1-rotate 1s ease-in-out infinite alternate both;
+    }
+    .hand-1 {
+    right: 323px;
+    bottom: 235px;
+    z-index: 20;
+    animation: hand-1-rotate 2s ease-in-out infinite alternate both;
+    transform-origin: 100% 10%;
+    }
+  .cape {
+      right: 180px;
+      bottom: 195px;
+      z-index: 30;
+      transform-origin: top left;
+      animation: cape-swing 1.5s ease-in-out infinite alternate;
+  }
+
+  .coffee-smoke {
+    right: 483px;
+    bottom: 250px;
+    animation: bounce 1.5s ease-in-out infinite alternate;
+    z-index: 50;
+    }
+
+  @keyframes cape-swing {
+      0% { transform: rotate(5deg);}
+      100% { transform: rotate(-10deg);}
+  }
+
+
+.loading-dots {
+  position: absolute;
+  background: white;
+  padding: 2px;
+  border-radius: 2px;
+  display: flex;
+  gap: 3px;
+  bottom: 25px;
+  right: 545px;
+  z-index: 500;
+}
+
+.loading-dots > :nth-child(2) {
+  opacity: 0.8;
+}
+.loading-dots > :nth-child(3) {
+  opacity: 0.6;
+}
+.loading-dots > :nth-child(4) {
+  opacity: 0.6;
+}
+.loading-dots > :nth-child(5) {
+  opacity: 0.25;
+}
+
+.dot-1 {
+	animation: dot-1 2s 2s infinite alternate;
+}
+ .dot-2 {
+	animation: dot-2 2s 2s infinite alternate;
+}
+ .dot-3 {
+	animation: dot-3 2s 2s infinite alternate;
+}
+ .dot-4 {
+	animation: dot-4 2s 2s infinite alternate;
+}
+ .dot-5 {
+	animation: dot-5 2s 2s infinite alternate;
+}
+
+@keyframes dot-1 {
+  0% {
+opacity: 0;
+}
+10% {
+    opacity: 0;
+}
+15% {
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+}
+
+}
+@keyframes dot-2 {
+  0% {
+    opacity: 0;
+}
+25% {
+    opacity: 0;
+}
+30% {
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes dot-3 {
+  0% {
+    opacity: 0;
+}
+40% {
+    opacity: 0;
+}
+45% {
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes dot-4 {
+  0% {
+    opacity: 0;
+}
+55% {
+    opacity: 0;
+}
+60% {
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes dot-5 {
+  0% {
+    opacity: 0;
+}
+70% {
+    opacity: 0;
+}
+75% {
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.skew {
+  position: absolute;
+  bottom: 380px;
+  right: 235px;
+  transform: skew(10deg);
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  z-index: 20;
+  }
+    
+.bar-1 {
+animation: bar-vertical 2s ease-in-out infinite both;
+transform-origin: bottom;
+}
+.bar-2 {
+animation: bar-vertical 3s ease-in-out infinite both;
+transform-origin: bottom;
+}
+.bar-3 {
+animation: bar-vertical 2.5s ease-in-out infinite both;
+transform-origin: bottom;
+}
+.bar-4 {
+animation: bar-vertical 4s ease-in-out infinite both;
+transform-origin: bottom;
+}
+
+@keyframes bar-vertical {
+0% { transform: scale(1, 0) }
+
+50% { transform: scale(1, 1) }
+
+100% { transform: scale(1, 0) }
+}
+
+.monitor-screen {
+  position: absolute;
+  top: 292px;
+  right: 370px;
+  z-index: 10;
+}
+
+.monitor-screen > * {
+  position: absolute;
+}
+
+.monitor-screen > img:nth-child(1) {
+  top: 0;
+  right: 0;
+  animation: blink-btn-1 3s linear  infinite  alternate;
+}
+
+.monitor-screen > img:nth-child(2) {
+  top: 0;
+  right: 0;
+  animation: blink-btn-2 3s linear   infinite alternate;
+}
+
+.monitor-screen > img:nth-child(3) {
+  top: 0;
+  right: 0;
+  animation: blink-btn-3 3s linear  infinite alternate;
+}
+
+@keyframes blink-btn-1 {
+  0% { opacity: 1}
+  30% { opacity: 0}
+  60% { opacity: 0}
+  100% { opacity: 0}
+  }
+
+  @keyframes blink-btn-2 {
+  0% { opacity: 0}
+  30% { opacity: 1}
+  60% { opacity: 0}
+  100% { opacity: 0}
+  }
+  @keyframes blink-btn-3 {
+  0% { opacity: 0}
+  30% { opacity: 0}
+  60% { opacity: 1}
+  120% { opacity: 0}
+  }
+
+
+
+/* ////////////////////////// */
+/* SCROLLING DATA CARDS RIGHT */
+
+.cards-deck-right-2{
+  position:absolute;
+  border: 1px solid var(--green);
+  border-radius: 30px;
+  top: -50px;
+  right: 380px;
+  width:315px;
+  height:350px;
+  overflow:hidden;
+  overflow-y:hidden;
+}
+.scrolling-card-right-2 {
+    background: rgba(255, 255, 255, 0.7);
+  position:absolute;
+  /* top:-1100px; */
+  top:-1900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: -10;
+
+  animation: scroll-right-2 7s linear infinite;
+}
+
+@keyframes scroll-right-2 {
+  /* 100% { transform:  translateY(-815px) }  */
+  100% { transform:  translateY(1587px) } 
+  }
+
+
+  .cards-deck-right-3{
+      position:absolute;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      top: 140px;
+      right: 165px;
+      width:250px;
+      height:270px;
+      overflow:hidden;
+      overflow-y:hidden;
+      z-index: -99;
+
+      opacity: 0.3;
+  }
+
+  .scrolling-card-right-3 {
+      position:absolute;
+      top:20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: -10;
+  
+      animation: scroll-right-3 1s linear infinite;
+  }
+
+  @keyframes scroll-right-3 {
+      100% { top: -400px; }
+  }
+
+  .dummy-card {
+      width: 80%;
+      border-radius: 20px;
+      height: 100px;
+      background-color: var(--green);
+  }
+    
+
+    /* ////////////////////////// */
+    /*! POP UP ANIMATION */
+
+    .popup-twitter {
+        top: 10px;
+        right: 200px;
+        opacity: 0;
+        z-index: 99;
+        animation: popup 7s 3s infinite;
+    }
+
+    .popup-google {
+        top: 200px;
+        right: 650px;
+        z-index: 99;
+        opacity: 0;
+        animation: popup 7s 4.5s infinite;
+    }
+
+    .popup-reddit {
+        top: 170px;
+        right: 170px;
+        z-index: 99;
+        opacity: 0;
+        animation: popup 7s 6s infinite;
+    }
+
+    .popup-amazon {
+        top:20px;
+        right: 650px;
+        z-index: 99;
+        opacity: 0;
+        animation: popup 7s 7s infinite;
+    }
